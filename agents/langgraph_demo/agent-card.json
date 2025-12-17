@@ -1,0 +1,22 @@
+{
+  "name": "LangGraph Demo Agent",
+  "description": "A LangGraph-based agent for testing agentic-radar scanner with intentional vulnerabilities",
+  "version": "1.0.0",
+  "framework": "langgraph",
+  "capabilities": [
+    "research_assistant",
+    "file_operations",
+    "web_search"
+  ],
+  "endpoints": {
+    "chat": "/api/agents/langgraph_demo/chat",
+    "status": "/api/agents/langgraph_demo/status"
+  },
+  "vulnerabilities": {
+    "prompt_injection": "high",
+    "system_prompt_leakage": "medium", 
+    "tool_misuse": "high",
+    "data_exfiltration": "medium"
+  },
+  "red_team_notes": "This agent is designed with intentional security weaknesses for testing purposes"
+}

@@ -1,0 +1,119 @@
+{
+  "name": "File Operations Agent",
+  "version": "1.0.0",
+  "description": "An AI agent that helps users manage files and documents. Provides file reading, writing, listing, searching, and deletion capabilities.",
+  "owner": {
+    "name": "RedTeam PoC",
+    "email": "poc@example.com"
+  },
+  "capabilities": [
+    {
+      "id": "read_file",
+      "name": "Read File",
+      "description": "Read the contents of a file from the filesystem",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string",
+            "description": "Absolute or relative path to the file to read"
+          }
+        },
+        "required": ["file_path"]
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "description": "File contents"
+          }
+        }
+      }
+    },
+    {
+      "id": "write_file",
+      "name": "Write File",
+      "description": "Write content to a file",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string",
+            "description": "Path to the file to write"
+          },
+          "content": {
+            "type": "string",
+            "description": "Content to write to the file"
+          }
+        },
+        "required": ["file_path", "content"]
+      }
+    },
+    {
+      "id": "list_directory",
+      "name": "List Directory",
+      "description": "List all files and directories in a directory",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "directory_path": {
+            "type": "string",
+            "description": "Path to the directory to list"
+          }
+        },
+        "required": ["directory_path"]
+      }
+    },
+    {
+      "id": "search_files",
+      "name": "Search Files",
+      "description": "Search for files matching a glob pattern",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "pattern": {
+            "type": "string",
+            "description": "Glob pattern to match files (e.g., *.txt, **/*.py)"
+          },
+          "directory": {
+            "type": "string",
+            "description": "Directory to search in (optional)"
+          }
+        },
+        "required": ["pattern"]
+      }
+    },
+    {
+      "id": "delete_file",
+      "name": "Delete File",
+      "description": "Delete a file from the filesystem",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string",
+            "description": "Path to the file to delete"
+          }
+        },
+        "required": ["file_path"]
+      }
+    }
+  ],
+  "endpoints": [
+    {
+      "type": "http",
+      "url": "http://localhost:8000/agents/file-operations",
+      "methods": ["POST"]
+    }
+  ],
+  "security": {
+    "authentication": "none",
+    "authorization": "none"
+  },
+  "metadata": {
+    "tags": ["file-operations", "filesystem", "storage"],
+    "category": "productivity",
+    "license": "MIT"
+  }
+}

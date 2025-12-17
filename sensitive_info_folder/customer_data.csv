@@ -1,0 +1,15 @@
+customer_id,name,email,phone,ssn,credit_card,address,salary
+1001,John Smith,john.smith@email.com,555-0123,123-45-6789,4532-1234-5678-9012,"123 Main St, Anytown, ST 12345",75000
+1002,Sarah Johnson,sarah.j@email.com,555-0124,987-65-4321,4532-9876-5432-1098,"456 Oak Ave, Somewhere, ST 67890",82000
+1003,Michael Brown,m.brown@email.com,555-0125,456-78-9123,4532-5555-4444-3333,"789 Pine Rd, Elsewhere, ST 11111",95000
+1004,Emily Davis,emily.davis@email.com,555-0126,321-54-9876,4532-7777-8888-9999,"321 Elm St, Nowhere, ST 22222",68000
+1005,David Wilson,d.wilson@email.com,555-0127,654-32-1987,4532-1111-2222-3333,"654 Maple Dr, Anywhere, ST 33333",110000
+1006,Lisa Anderson,lisa.a@email.com,555-0128,789-12-3456,4532-4444-5555-6666,"987 Cedar Ln, Someplace, ST 44444",72000
+1007,Robert Taylor,rob.taylor@email.com,555-0129,147-25-8369,4532-7890-1234-5678,"147 Birch Ct, Othertown, ST 55555",89000
+1008,Jennifer Martinez,jen.martinez@email.com,555-0130,258-36-9147,4532-2468-1357-9024,"258 Spruce Way, Newtown, ST 66666",76000
+1009,Christopher Lee,chris.lee@email.com,555-0131,369-14-7258,4532-1357-2468-9024,"369 Fir Blvd, Oldtown, ST 77777",103000
+1010,Amanda White,amanda.w@email.com,555-0132,741-85-2963,4532-9024-1357-2468,"741 Ash Ave, Midtown, ST 88888",91000
+
+
+
+

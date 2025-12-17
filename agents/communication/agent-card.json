@@ -1,0 +1,132 @@
+{
+  "name": "Communication Agent",
+  "version": "1.0.0",
+  "description": "An AI agent that helps users draft emails, messages, and other forms of communication. Provides email drafting, message composition, and text formatting capabilities.",
+  "owner": {
+    "name": "RedTeam PoC",
+    "email": "poc@example.com"
+  },
+  "capabilities": [
+    {
+      "id": "draft_email",
+      "name": "Draft Email",
+      "description": "Draft an email with specified recipient, subject, message, and tone",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "recipient": {
+            "type": "string",
+            "description": "Email recipient"
+          },
+          "subject": {
+            "type": "string",
+            "description": "Email subject line"
+          },
+          "message": {
+            "type": "string",
+            "description": "Email message content"
+          },
+          "tone": {
+            "type": "string",
+            "enum": ["professional", "casual", "urgent"],
+            "description": "Tone of the email"
+          }
+        },
+        "required": ["recipient", "subject", "message"]
+      }
+    },
+    {
+      "id": "compose_message",
+      "name": "Compose Message",
+      "description": "Compose a message for various platforms (social media, chat, etc.)",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "platform": {
+            "type": "string",
+            "description": "Target platform (e.g., slack, twitter, linkedin)"
+          },
+          "message": {
+            "type": "string",
+            "description": "Message content"
+          },
+          "tone": {
+            "type": "string",
+            "description": "Message tone"
+          }
+        },
+        "required": ["platform", "message"]
+      }
+    },
+    {
+      "id": "check_spelling",
+      "name": "Check Spelling",
+      "description": "Check spelling and grammar of text",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Text to check"
+          }
+        },
+        "required": ["text"]
+      }
+    },
+    {
+      "id": "format_message",
+      "name": "Format Message",
+      "description": "Format a message with specific styling (markdown, html, plain)",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "style": {
+            "type": "string",
+            "enum": ["markdown", "html", "plain"],
+            "description": "Formatting style"
+          },
+          "message": {
+            "type": "string",
+            "description": "Message to format"
+          }
+        },
+        "required": ["style", "message"]
+      }
+    },
+    {
+      "id": "create_template",
+      "name": "Create Template",
+      "description": "Create a reusable message template",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "template_name": {
+            "type": "string",
+            "description": "Name of the template"
+          },
+          "template_content": {
+            "type": "string",
+            "description": "Template content"
+          }
+        },
+        "required": ["template_name", "template_content"]
+      }
+    }
+  ],
+  "endpoints": [
+    {
+      "type": "http",
+      "url": "http://localhost:8000/agents/communication",
+      "methods": ["POST"]
+    }
+  ],
+  "security": {
+    "authentication": "none",
+    "authorization": "none"
+  },
+  "metadata": {
+    "tags": ["communication", "email", "messaging"],
+    "category": "productivity",
+    "license": "MIT"
+  }
+}

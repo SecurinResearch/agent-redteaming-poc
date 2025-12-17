@@ -1,0 +1,107 @@
+{
+  "name": "Web Research Agent",
+  "version": "1.0.0",
+  "description": "An AI agent that helps users research topics online. Provides web search, URL fetching, link extraction, and news search capabilities.",
+  "owner": {
+    "name": "RedTeam PoC",
+    "email": "poc@example.com"
+  },
+  "capabilities": [
+    {
+      "id": "search_web",
+      "name": "Search Web",
+      "description": "Search the web for information using DuckDuckGo",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query string"
+          }
+        },
+        "required": ["query"]
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "description": "Search results with title, URL, and snippet"
+          }
+        }
+      }
+    },
+    {
+      "id": "fetch_url",
+      "name": "Fetch URL",
+      "description": "Fetch and extract text content from a webpage",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to fetch"
+          }
+        },
+        "required": ["url"]
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "description": "Extracted text content"
+          }
+        }
+      }
+    },
+    {
+      "id": "extract_links",
+      "name": "Extract Links",
+      "description": "Extract all links from a webpage",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to extract links from"
+          }
+        },
+        "required": ["url"]
+      }
+    },
+    {
+      "id": "search_news",
+      "name": "Search News",
+      "description": "Search for recent news articles",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "News search query string"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ],
+  "endpoints": [
+    {
+      "type": "http",
+      "url": "http://localhost:8000/agents/web-research",
+      "methods": ["POST"]
+    }
+  ],
+  "security": {
+    "authentication": "none",
+    "authorization": "none"
+  },
+  "metadata": {
+    "tags": ["web-research", "search", "information-retrieval"],
+    "category": "research",
+    "license": "MIT"
+  }
+}
